@@ -8,27 +8,27 @@ class App extends Component{
     super();
 
     this.state = {
-      string:'Hello am from App Component'
+      students:[
+        {
+          name: 'sample1',
+          id: 1
+        },
+        {
+          name:'sample2',
+          id: 2
+        },
+        {
+          name:'sample3',
+          id:3
+        }]
     };
   }
   render(){
     return(
           <div className="App">
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <p>
-                {this.state.string}
-              </p>
-              <button onClick={() => this.setState({string:'HELLO Everyone'})}>Click to change</button>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn React
-              </a>
-            </header>
+            {
+              this.state.students.map(student => (<h1 key={student.id}>{student.name }</h1>))
+            }
           </div>
         );
       }
