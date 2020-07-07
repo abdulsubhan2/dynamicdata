@@ -56,23 +56,17 @@ class Courses extends React.Component{
          <h1>List of Technologies</h1>
          <button onClick={this.handleClick}>Click to Change</button>
          <Bottom technology = {this.state.tech}/>
-      </div>
-        
+      </div>   
     )
   }
-}
-Courses.defaultProps = {
-  //tech:['React','NodeJS','MongoDB']
 }
 class Bottom extends React.Component{
   render(){
     return(
       <div>
-       
         <div>{this.props.technology.map((item, i) => {
           return <p key={i}>{item}</p>;
         })}</div>
-
       </div>
           )
   }
